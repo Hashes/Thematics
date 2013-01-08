@@ -8,6 +8,7 @@ public class Character {
 	 * Class instances
 	 */
 	private Character character;
+	private Behavior behavior;
 	private Combat combat;
 	
 	/**
@@ -61,6 +62,12 @@ public class Character {
 	 */
 	public Combat getCombat() {
 		return combat;
+	}
+	
+	public Behavior getBehavior() {
+		if (behavior == null)
+			behavior = new Behavior();
+		return behavior;
 	}
 	
 }

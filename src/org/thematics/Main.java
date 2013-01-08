@@ -1,6 +1,8 @@
 package org.thematics;
 
+import org.thematics.character.Behavior;
 import org.thematics.character.Character;
+import org.thematics.character.mage.Mage;
 import org.thematics.character.melee.Soldier;
 import org.thematics.combat.Magic;
 import org.thematics.frame.Frame;
@@ -20,5 +22,8 @@ public class Main {
 		Frame frame = new Frame();
 		character.setCombat(new Magic());
 		character.attack();
+		frame.start();
+		
+		character.getBehavior().walk(character);
 	}
 }
