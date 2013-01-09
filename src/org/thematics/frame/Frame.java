@@ -28,6 +28,7 @@ public class Frame {
 			Display.setDisplayMode(new DisplayMode(FrameSettings.FRAME_WIDTH,
 					FrameSettings.FRAME_HEIGHT));
 			Display.setTitle(FrameSettings.FRAME_NAME + " frame");
+			Display.setResizable(true);
 			Display.create();
 		} catch (LWJGLException exception) {
 			exception.printStackTrace();
@@ -38,21 +39,24 @@ public class Frame {
 		while (!Display.isCloseRequested()) {
 			draw();
 			Display.update();
-			Display.sync(60);
+			Display.sync(FrameSettings.FRAME_RATE);
 		}
+		Display.destroy();
 	}
 	
 	private void draw() {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
-		glBegin(GL_TRIANGLES);
+		glBegin(GL_QUADS);
 		
 		glColor3f(1.0f, 0, 0);
 		glVertex2f(-0.75f, 0.75f);
-		glColor3f(0, 1.0f, 0);
+		glColor3f(2, 1.45f, 0);
 		glVertex2f(0.75f, 0.75f);
-		glColor3f(0, 0, 1.0f);
+		glColor3f(0, 45, 1.0f);
 		glVertex2f(0.75f, -0.75f);
+		glColor3f(1.0f, 3, 4.8f);
+		glVertex2f(-0.75f, -0.75f);
 		
 		
 		glEnd();
