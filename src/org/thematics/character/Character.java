@@ -65,8 +65,6 @@ public class Character {
 	}
 	
 	public Behavior getBehavior() {
-		if (behavior == null)
-			behavior = new Behavior();
 		return behavior;
 	}
 	

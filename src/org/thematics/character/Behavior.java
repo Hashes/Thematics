@@ -1,12 +1,14 @@
 package org.thematics.character;
 
-import org.thematics.character.mage.Mage;
-
+/**
+ * The behaviors of the character.
+ * @author Guillaume
+ *
+ */
 public class Behavior {
 
-	public void walk(Character character) {
-		if (character instanceof Mage)
-			System.out.println("Walk");
+	public void walk() {
+		
 	}
 	
 	public void rest() {
