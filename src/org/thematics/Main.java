@@ -1,6 +1,5 @@
 package org.thematics;
 
-import org.thematics.character.Behavior;
 import org.thematics.character.Character;
 import org.thematics.character.mage.Mage;
 import org.thematics.character.melee.Soldier;
@@ -18,12 +17,11 @@ public class Main {
 	 * @param args 
 	 */
 	public static void main(String[] args) {
-		Character character = new Soldier();
+		Character character = new Mage();
+		character.setCharacter(new Soldier());
 		Frame frame = new Frame();
 		character.setCombat(new Magic());
 		character.attack();
 		frame.start();
-		
-		character.getBehavior().walk(character);
 	}
 }
