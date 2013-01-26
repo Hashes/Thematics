@@ -1,10 +1,8 @@
 package org.thematics;
 
-import org.thematics.character.Character;
-import org.thematics.character.mage.Mage;
-import org.thematics.character.melee.Soldier;
-import org.thematics.combat.Magic;
-import org.thematics.frame.Frame;
+import org.thematics.entity.character.Character;
+import org.thematics.entity.character.mage.Mage;
+import org.thematics.entity.character.melee.Soldier;
 
 /**
  * Entry point of the program.
@@ -18,10 +16,5 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Character character = new Mage();
-		character.setCharacter(new Soldier());
-		Frame frame = new Frame();
-		character.setCombat(new Magic());
-		character.attack();
-		frame.start();
 	}
 }
