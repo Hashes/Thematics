@@ -1,0 +1,2 @@
+Combat : the combat will be single specialty at a time, meaning that you can't be both mage and soldier. 
+         Will be added later during the project. The same will apply for Npcs.

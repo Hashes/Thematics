@@ -1,4 +1,0 @@
-Thematics
-=========
-
-Java OOP project.

@@ -1,7 +1,12 @@
 package org.thematics.entity;
 
-import org.thematics.combat.Combat;
+import org.thematics.player.Player;
 
+/**
+ * The entity: player & npc.
+ * @author Guillaume
+ *
+ */
 public class Entity {
 
 	/**
@@ -32,20 +37,8 @@ public class Entity {
 		this(combat, 0);
 	}
 	
-	/**
-	 * Sets the combat instance.
-	 * @param combat
-	 */
-	public void setCombat(Combat combat) {
-		this.combat = combat;
-	}
-	
-	/**
-	 * Returns the combat instance.
-	 * @return combat
-	 */
-	public Combat getCombat() {
-		return combat;
+	public void attack(Entity entity) {
+		combat.attack(entity);
 	}
 	
 	/**
