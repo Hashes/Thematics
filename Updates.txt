@@ -1,2 +1,10 @@
 Combat : the combat will be single specialty at a time, meaning that you can't be both mage and soldier. 
          Will be added later during the project. The same will apply for Npcs.
+
+
+Entity : The entity represents both a player and a npc. Their similarities are handled as an entity, 
+         while their different aspects are handled separatly.
+
+
+Input/Output : This will be used to save an object (usually the player) in a file and be read later
+	       to load player information.
