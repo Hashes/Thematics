@@ -1,13 +1,15 @@
 package org.thematics.entity;
 
-import org.thematics.player.Player;
+import java.io.Serializable;
 
 /**
  * The entity: player & npc.
  * @author Guillaume
  *
  */
-public class Entity {
+public class Entity implements Serializable {
+
+	private static final long serialVersionUID = -8502240702924446695L;
 
 	/**
 	 * The class instances.
@@ -26,7 +28,7 @@ public class Entity {
 	 */
 	protected Entity(Combat combat, int hitpoints) {
 		this.combat = combat;
-		this.hitpoints = hitpoints;
+		setHitpoints(hitpoints);
 	}
 	
 	/**
@@ -37,6 +39,11 @@ public class Entity {
 		this(combat, 0);
 	}
 	
+	/**
+	 * The action of attacking.
+	 * @param entity
+	 * 			the entity attacking.
+	 */
 	public void attack(Entity entity) {
 		combat.attack(entity);
 	}

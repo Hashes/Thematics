@@ -12,7 +12,7 @@ public class Melee implements Combat {
 
 	@Override
 	public void attack(Entity entity) {
-		
+		System.out.println("Melee attack.");
 	}
 
 	@Override

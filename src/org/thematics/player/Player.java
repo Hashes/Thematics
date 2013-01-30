@@ -10,6 +10,8 @@ import org.thematics.entity.Entity;
  */
 public class Player extends Entity {
 	
+	private static final long serialVersionUID = -8938021786221710215L;
+	
 	/**
 	 * Variables
 	 */
@@ -40,4 +42,7 @@ public class Player extends Entity {
 		return runEnergy;
 	}
 	
+	public String toString() {
+		return "Hitpoints : " + this.getHitpoints() + " Run energy : " + getRunEnergy();
+	}
 }

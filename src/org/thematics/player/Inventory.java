@@ -7,4 +7,6 @@ package org.thematics.player;
  */
 public class Inventory {
 
+	private static final int INVENTORY_MAX_SPACE = 15;
+	
 }

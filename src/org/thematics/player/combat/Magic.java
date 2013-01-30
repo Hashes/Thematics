@@ -16,7 +16,7 @@ public class Magic implements Combat {
 	
 	@Override
 	public void attack(Entity entity) {
-		
+		System.out.println("Mage attack.");
 	}
 
 	@Override

@@ -1,11 +1,13 @@
 package org.thematics.entity;
 
+import java.io.Serializable;
+
 /**
  * Interface handling general combat.
  * @author Guillaume
  *
  */
-public interface Combat {
+public interface Combat extends Serializable {
 
 	/**
 	 * Defines the way the character will attack

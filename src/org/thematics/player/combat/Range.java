@@ -16,7 +16,7 @@ public class Range implements Combat {
 
 	@Override
 	public void attack(Entity entity) {
-		
+		System.out.println("Range attack.");
 	}
 
 	@Override
