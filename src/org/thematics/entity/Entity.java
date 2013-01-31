@@ -31,6 +31,9 @@ public class Entity implements Serializable {
 		setHitpoints(hitpoints);
 	}
 	
+	protected Entity() {
+	}
+	
 	/**
 	 * Created a new entity with 0 as hitpoints.
 	 * @param combat

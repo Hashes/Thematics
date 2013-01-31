@@ -12,6 +12,8 @@ import org.thematics.player.combat.Range;
  */
 public final class Archer extends Player {
 
+	private static final long serialVersionUID = -163937089487192101L;
+
 	/**
 	 * Creates a new instance of Archer.
 	 */

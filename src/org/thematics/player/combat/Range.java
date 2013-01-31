@@ -10,6 +10,8 @@ import org.thematics.entity.Entity;
  */
 public class Range implements Combat {
 
+	private static final long serialVersionUID = 5201283992127368551L;
+
 	public Range() {
 		
 	}

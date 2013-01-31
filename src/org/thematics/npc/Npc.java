@@ -4,6 +4,7 @@ import org.thematics.entity.Combat;
 import org.thematics.entity.Entity;
 import org.thematics.player.combat.Melee;
 
+@SuppressWarnings("serial")
 public final class Npc extends Entity {
 
 	/**

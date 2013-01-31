@@ -12,6 +12,8 @@ import org.thematics.player.combat.Melee;
  */
 public final class Soldier extends Player {
 
+	private static final long serialVersionUID = -9029451886958466300L;
+
 	/**
 	 * Creates a new instance of Soldier.
 	 */

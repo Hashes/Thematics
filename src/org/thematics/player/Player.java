@@ -26,6 +26,9 @@ public class Player extends Entity {
 		runEnergy = 100;
 	}
 	
+	public Player() {
+	}
+	
 	/**
 	 * Sets the player run energy if not above 100 or below 0.	
 	 * @param runEnergy
@@ -40,9 +43,5 @@ public class Player extends Entity {
 	 */
 	public int getRunEnergy() {
 		return runEnergy;
-	}
-	
-	public String toString() {
-		return "Hitpoints : " + this.getHitpoints() + " Run energy : " + getRunEnergy();
 	}
 }

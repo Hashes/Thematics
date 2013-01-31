@@ -10,6 +10,8 @@ import org.thematics.entity.Entity;
  */
 public class Magic implements Combat {
 
+	private static final long serialVersionUID = 2183225692936786260L;
+
 	public Magic() {
 		
 	}

@@ -12,6 +12,8 @@ import org.thematics.player.combat.Magic;
  */
 public final class Mage extends Player {
 
+	private static final long serialVersionUID = -4653890433595940247L;
+
 	/**
 	 * Creates a new instance of Mage
 	 */
