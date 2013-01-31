@@ -1,8 +1,8 @@
 package org.thematics.player.mage;
 
+import org.thematics.entity.Combat.CombatTypes;
 import org.thematics.player.Player;
 import org.thematics.player.Settings;
-import org.thematics.player.combat.Magic;
 
 /**
  * Mage class defining specific traits
@@ -18,7 +18,7 @@ public final class Mage extends Player {
 	 * Creates a new instance of Mage
 	 */
 	public Mage() {
-		super(new Magic(), Settings.MAGE_HITPOINTS);
+		super(CombatTypes.MAGIC, Settings.MAGE_HITPOINTS);
 	}
 	
 }

@@ -1,5 +1,6 @@
 package org.thematics;
 
+
 /**
  * Entry point of the program.
  * @author Guillaume

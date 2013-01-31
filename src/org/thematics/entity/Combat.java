@@ -1,24 +1,31 @@
 package org.thematics.entity;
 
-import java.io.Serializable;
+import org.thematics.npc.NpcCombat;
+import org.thematics.player.Player;
+import org.thematics.player.PlayerCombat;
 
 /**
- * Interface handling general combat.
+ * Class handling general combat.
  * @author Guillaume
  *
  */
-public interface Combat extends Serializable {
+public class Combat {
 
-	/**
-	 * Defines the way the character will attack
-	 * and which attack style he will use.
-	 */
-	public void attack(Entity entity);
+	public static enum CombatTypes {
+		MELEE,
+		RANGE,
+		MAGIC;
+	}
 	
-	/**
-	 * Defines if a player can attck or not.
-	 * @return canAttack
-	 */
-	public boolean canAttack();
-	
+	public void attack(Entity entity) {
+		Combat combat;
+		if (entity instanceof Player) {
+			combat = new PlayerCombat();
+			combat.attack(entity);
+		}
+		else {
+			combat = new NpcCombat();
+			combat.attack(entity);
+		}
+	}
 }

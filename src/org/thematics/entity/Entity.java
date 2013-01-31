@@ -1,20 +1,20 @@
 package org.thematics.entity;
 
-import java.io.Serializable;
+import org.thematics.entity.Combat.CombatTypes;
+
 
 /**
  * The entity: player & npc.
  * @author Guillaume
  *
  */
-public class Entity implements Serializable {
-
-	private static final long serialVersionUID = -8502240702924446695L;
+public abstract class Entity {
 
 	/**
 	 * The class instances.
 	 */
 	private Combat combat;
+	private CombatTypes combatTypes;
 	
 	/**
 	 * The variables.
@@ -26,8 +26,9 @@ public class Entity implements Serializable {
 	 * @param combat
 	 * @param hitpoints
 	 */
-	protected Entity(Combat combat, int hitpoints) {
-		this.combat = combat;
+	protected Entity(CombatTypes combatTypes, int hitpoints) {
+		this.combatTypes = combatTypes;
+		// TODO Combat must be initialized to use attack.
 		setHitpoints(hitpoints);
 	}
 	
@@ -38,17 +39,29 @@ public class Entity implements Serializable {
 	 * Created a new entity with 0 as hitpoints.
 	 * @param combat
 	 */
-	protected Entity(Combat combat) {
-		this(combat, 0);
+	protected Entity(CombatTypes combatTypes) {
+		this(combatTypes, 0);
 	}
-	
 	/**
-	 * The action of attacking.
-	 * @param entity
-	 * 			the entity attacking.
+	 * Defines the way the character will attack
+	 * and which attack style he will use.
 	 */
 	public void attack(Entity entity) {
 		combat.attack(entity);
+	}
+	
+	/**
+	 * Defines if a player can attck or not.
+	 * @return canAttack
+	 */
+	public abstract boolean canAttack();
+	
+	/**
+	 * The combat type used by the player.
+	 * @return combatTypes
+	 */
+	public CombatTypes getCombatTypes() {
+		return combatTypes;
 	}
 	
 	/**

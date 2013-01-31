@@ -1,8 +1,8 @@
 package org.thematics.player.melee;
 
+import org.thematics.entity.Combat.CombatTypes;
 import org.thematics.player.Player;
 import org.thematics.player.Settings;
-import org.thematics.player.combat.Melee;
 
 /**
  * Soldier class defining specific traits
@@ -18,7 +18,7 @@ public final class Soldier extends Player {
 	 * Creates a new instance of Soldier.
 	 */
 	public Soldier() {
-		super(new Melee(), Settings.SOLDIER_HITPOINTS);
+		super(CombatTypes.MELEE, Settings.SOLDIER_HITPOINTS);
 	}
 	
 }

@@ -3,15 +3,12 @@ package org.thematics.npc;
 import org.thematics.entity.Combat;
 import org.thematics.entity.Entity;
 
-@SuppressWarnings("serial")
-public class NpcCombat implements Combat {
+public class NpcCombat extends Combat {
 
-	@Override
 	public void attack(Entity entity) {
-		
+		System.out.println("Npc attacking.");
 	}
 
-	@Override
 	public boolean canAttack() {
 		return false;
 	}	

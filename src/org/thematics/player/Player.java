@@ -1,6 +1,8 @@
 package org.thematics.player;
 
-import org.thematics.entity.Combat;
+import java.io.Serializable;
+
+import org.thematics.entity.Combat.CombatTypes;
 import org.thematics.entity.Entity;
 
 /**
@@ -8,9 +10,14 @@ import org.thematics.entity.Entity;
  * @author Guillaume
  *
  */
-public class Player extends Entity {
+public class Player extends Entity implements Serializable {
 	
 	private static final long serialVersionUID = -8938021786221710215L;
+	
+	/**
+	 * Class instances
+	 */
+	
 	
 	/**
 	 * Variables
@@ -21,12 +28,9 @@ public class Player extends Entity {
 	 * Creates a new player.
 	 * @param combat
 	 */
-	public Player(Combat combat, int hitpoints) {
-		super(combat, hitpoints);
+	public Player(CombatTypes combatTypes, int hitpoints) {
+		super(combatTypes, hitpoints);
 		runEnergy = 100;
-	}
-	
-	public Player() {
 	}
 	
 	/**
@@ -43,5 +47,10 @@ public class Player extends Entity {
 	 */
 	public int getRunEnergy() {
 		return runEnergy;
+	}
+
+	@Override
+	public boolean canAttack() {
+		return false;
 	}
 }

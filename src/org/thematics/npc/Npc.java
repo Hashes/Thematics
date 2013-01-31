@@ -1,19 +1,17 @@
 package org.thematics.npc;
 
-import org.thematics.entity.Combat;
+import org.thematics.entity.Combat.CombatTypes;
 import org.thematics.entity.Entity;
-import org.thematics.player.combat.Melee;
 
-@SuppressWarnings("serial")
 public final class Npc extends Entity {
-
+	
 	/**
 	 * Creates a new non-player character.
 	 * @param combat
 	 * @param hitpoints
 	 */
-	public Npc(Combat combat, int hitpoints) {
-		super(combat, hitpoints);
+	public Npc(CombatTypes combatTypes, int hitpoints) {
+		super(combatTypes, hitpoints);
 	}
 	
 	/**
@@ -21,7 +19,12 @@ public final class Npc extends Entity {
 	 * along with 10 hitpoints.
 	 */
 	public Npc() {
-		this(new Melee(), 10);
+		this(CombatTypes.MELEE, 10);
+	}
+
+	@Override
+	public boolean canAttack() {
+		return false;
 	}
 	
 }
