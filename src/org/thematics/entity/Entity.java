@@ -29,10 +29,7 @@ public abstract class Entity {
 		this.combatTypes = combatTypes;
 		setHitpoints(hitpoints);
 	}
-	
-	protected Entity() {
-	}
-	
+
 	/**
 	 * Created a new entity with 0 as hitpoints.
 	 * @param combat
