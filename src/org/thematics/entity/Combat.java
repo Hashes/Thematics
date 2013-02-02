@@ -9,7 +9,7 @@ import org.thematics.player.PlayerCombat;
  * @author Guillaume
  *
  */
-public class Combat {
+public abstract class Combat {
 
 	public static enum CombatTypes {
 		MELEE,
@@ -17,15 +17,10 @@ public class Combat {
 		MAGIC;
 	}
 	
-	public void attack(Entity entity) {
-		Combat combat;
-		if (entity instanceof Player) {
-			combat = new PlayerCombat();
-			combat.attack(entity);
-		}
-		else {
-			combat = new NpcCombat();
-			combat.attack(entity);
-		}
+	public static void attack(Entity attacker, Entity victim) {
+		if (attacker instanceof Player)
+			PlayerCombat.attack(attacker, victim);
+		else
+			NpcCombat.attack(attacker, victim);
 	}
 }

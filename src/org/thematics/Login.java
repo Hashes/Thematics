@@ -7,6 +7,11 @@ import java.util.Scanner;
 import org.thematics.io.FilesManager;
 import org.thematics.player.Player;
 
+/**
+ * Class to handle when a player logs in.
+ * @author Guillaume
+ *
+ */
 public class Login {
 
 	public Login() {
@@ -20,12 +25,12 @@ public class Login {
 		Scanner scanner = new Scanner(System.in);
 		
 		do {
-			System.out.println("What's your username?");
+			System.out.println("Please enter your username.");
 			username = scanner.next();
 			player.setUsername(username);
 		} while (!player.hasProperUsername(username));
 		
-		System.out.println("What's your password?");
+		System.out.println("Please enter your password.");
 		password = scanner.next();
 		player.setPassword(password);
 		
@@ -36,6 +41,13 @@ public class Login {
 			
 			// Assigns the player object by reading the proper text file.
 			player = (Player) FilesManager.readFromFile(new File(username + ".txt"));
+			
+			if (!password.equals(player.getPassword())) {
+				System.out.println("Wrong password, please try again.");
+				return;
+			}
+			
+			System.out.println("You successfully login. Welcome, " + player.getUsername() + "!");
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}

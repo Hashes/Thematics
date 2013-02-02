@@ -21,10 +21,5 @@ public final class Npc extends Entity {
 	public Npc() {
 		this(CombatTypes.MELEE, 10);
 	}
-
-	@Override
-	public boolean canAttack() {
-		return false;
-	}
 	
 }

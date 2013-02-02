@@ -13,7 +13,6 @@ public abstract class Entity {
 	/**
 	 * The class instances.
 	 */
-	private Combat combat;
 	private CombatTypes combatTypes;
 	
 	/**
@@ -28,7 +27,6 @@ public abstract class Entity {
 	 */
 	protected Entity(CombatTypes combatTypes, int hitpoints) {
 		this.combatTypes = combatTypes;
-		// TODO Combat must be initialized to use attack.
 		setHitpoints(hitpoints);
 	}
 	
@@ -42,19 +40,6 @@ public abstract class Entity {
 	protected Entity(CombatTypes combatTypes) {
 		this(combatTypes, 0);
 	}
-	/**
-	 * Defines the way the character will attack
-	 * and which attack style he will use.
-	 */
-	public void attack(Entity entity) {
-		combat.attack(entity);
-	}
-	
-	/**
-	 * Defines if a player can attck or not.
-	 * @return canAttack
-	 */
-	public abstract boolean canAttack();
 	
 	/**
 	 * The combat type used by the player.
@@ -62,6 +47,15 @@ public abstract class Entity {
 	 */
 	public CombatTypes getCombatTypes() {
 		return combatTypes;
+	}
+	
+	/**
+	 * Sets the entity combat type.
+	 * Must be used only when the player
+	 * chooses to change his combat type.
+	 */
+	public void setCombatTypes(CombatTypes combatTypes) {
+		this.combatTypes = combatTypes;
 	}
 	
 	/**

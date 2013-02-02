@@ -1,5 +1,7 @@
 package org.thematics;
 
+import org.thematics.player.melee.Soldier;
+
 
 /**
  * Entry point of the program.
@@ -13,6 +15,6 @@ public class Main {
 	 * 
 	 */
 	public static void main(String[] args) {
-		
+		new Login().login(new Soldier());
 	}
 }
