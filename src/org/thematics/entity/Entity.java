@@ -22,7 +22,7 @@ public abstract class Entity {
 	
 	/**
 	 * Creates a new entity.
-	 * @param combat
+	 * @param combatTypes
 	 * @param hitpoints
 	 */
 	protected Entity(CombatTypes combatTypes, int hitpoints) {
@@ -30,9 +30,12 @@ public abstract class Entity {
 		setHitpoints(hitpoints);
 	}
 
+	protected Entity() {
+		
+	}
 	/**
 	 * Created a new entity with 0 as hitpoints.
-	 * @param combat
+	 * @param combatTypes
 	 */
 	protected Entity(CombatTypes combatTypes) {
 		this(combatTypes, 0);

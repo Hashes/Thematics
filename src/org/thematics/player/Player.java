@@ -1,8 +1,10 @@
 package org.thematics.player;
 
 import java.io.Serializable;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import org.thematics.entity.Combat;
 import org.thematics.entity.Combat.CombatTypes;
 import org.thematics.entity.Entity;
 
@@ -35,7 +37,19 @@ public class Player extends Entity implements Serializable {
 		super(combatTypes, hitpoints);
 		username = null;
 		password = null;
-		runEnergy = 100;
+		setRunEnergy(100);
+	}
+	
+	protected Player() {
+		super();
+	}
+	
+	/**
+	 * Starts the game once the player is logged in.
+	 * 
+	 */
+	public void start() {
+		
 	}
 
 	/**
