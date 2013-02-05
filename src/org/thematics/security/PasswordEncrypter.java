@@ -32,7 +32,7 @@ public class PasswordEncrypter {
 	 */
 	public static byte[] hash(String x) throws Exception {
 		MessageDigest string;
-		string = java.security.MessageDigest.getInstance("SHA-1");
+		string = MessageDigest.getInstance("SHA-1");
 		string.reset();
 		string.update(x.getBytes());
 		return string.digest();

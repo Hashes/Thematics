@@ -1,7 +1,8 @@
 package org.thematics;
 
-import org.thematics.player.Player;
-import org.thematics.player.melee.Soldier;
+import java.awt.EventQueue;
+
+import org.thematics.frame.Frame;
 
 /**
  * Entry point of the program.
@@ -15,8 +16,10 @@ public class Main {
 	 * 
 	 */
 	public static void main(String[] args) {
-		Player player = new Soldier();
-		
-		new Login().login(player);
+		EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Frame().setVisible(true);
+            }
+        });
 	}
 }

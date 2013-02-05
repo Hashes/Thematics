@@ -1,10 +1,8 @@
 package org.thematics.player;
 
 import java.io.Serializable;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import org.thematics.entity.Combat;
 import org.thematics.entity.Combat.CombatTypes;
 import org.thematics.entity.Entity;
 
