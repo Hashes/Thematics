@@ -1,6 +1,5 @@
 package org.thematics.player;
 
-import java.io.Serializable;
 import java.util.regex.Pattern;
 
 import org.thematics.entity.Combat.CombatTypes;
@@ -11,7 +10,7 @@ import org.thematics.entity.Entity;
  * @author Guillaume
  *
  */
-public class Player extends Entity implements Serializable {
+public class Player extends Entity {
 	
 	private static final long serialVersionUID = -8938021786221710215L;
 	
@@ -25,17 +24,22 @@ public class Player extends Entity implements Serializable {
 	 */
 	private String username;
 	private String password;
+	private String characterName;
 	private int runEnergy;
 	
 	/**
 	 * Creates a new player.
 	 * @param combat
 	 */
-	public Player(CombatTypes combatTypes, int hitpoints) {
+	public Player(CombatTypes combatTypes, int hitpoints, String username, String password) {
 		super(combatTypes, hitpoints);
-		username = null;
-		password = null;
+		this.username = username;
+		this.password = password;
 		setRunEnergy(100);
+	}
+	
+	public Player(CombatTypes combatTypes, int hitpoints) {
+		this(combatTypes, hitpoints, null, null);
 	}
 	
 	public Player() {
@@ -47,7 +51,9 @@ public class Player extends Entity implements Serializable {
 	 * 
 	 */
 	public void start() {
-		
+		System.out.println("You are playing as a : " + this.getClass().getSimpleName());
+		System.out.println("Your character name is " + this.characterName + ".");
+		System.out.println("You have " + getHitpoints() + " hitpoints and " + this.runEnergy + "% run energy.");
 	}
 
 	/**
@@ -79,10 +85,6 @@ public class Player extends Entity implements Serializable {
 	 * @param username
 	 */
 	public void setUsername(String username) {
-		if (!hasProperUsername(username)) {
-			System.out.println("Your username may only contain letters and numbers.");
-			return;
-		}
 		this.username = username;
 	}
 	
@@ -109,5 +111,21 @@ public class Player extends Entity implements Serializable {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	/**
+	 * Returns the character's name.
+	 * @return characterName.
+	 */
+	public String getCharacterName() {
+		return characterName;
+	}
+
+	/**
+	 * Sets the in-game player username.
+	 * @param characterName
+	 */
+	public void setCharacterName(String characterName) {
+		this.characterName = characterName;
 	}
 }

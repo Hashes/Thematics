@@ -1,5 +1,7 @@
 package org.thematics.entity;
 
+import java.io.Serializable;
+
 import org.thematics.entity.Combat.CombatTypes;
 
 
@@ -8,7 +10,9 @@ import org.thematics.entity.Combat.CombatTypes;
  * @author Guillaume
  *
  */
-public abstract class Entity {
+public abstract class Entity implements Serializable {
+
+	private static final long serialVersionUID = -7601037320831877391L;
 
 	/**
 	 * The class instances.
@@ -33,6 +37,7 @@ public abstract class Entity {
 	protected Entity() {
 		
 	}
+	
 	/**
 	 * Created a new entity with 0 as hitpoints.
 	 * @param combatTypes

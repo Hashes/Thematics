@@ -2,7 +2,7 @@ package org.thematics;
 
 import java.awt.EventQueue;
 
-import org.thematics.frame.Frame;
+import org.thematics.frame.LoginFrame;
 
 /**
  * Entry point of the program.
@@ -18,7 +18,7 @@ public class Main {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame().setVisible(true);
+                new LoginFrame().setVisible(true);
             }
         });
 	}

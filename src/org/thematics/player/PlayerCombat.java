@@ -1,7 +1,7 @@
 package org.thematics.player;
 
-import org.thematics.entity.Entity;
 import org.thematics.entity.Combat.CombatTypes;
+import org.thematics.entity.Entity;
 
 public class PlayerCombat {
 
