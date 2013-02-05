@@ -38,7 +38,7 @@ public class Player extends Entity implements Serializable {
 		setRunEnergy(100);
 	}
 	
-	protected Player() {
+	public Player() {
 		super();
 	}
 	

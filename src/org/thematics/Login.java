@@ -24,9 +24,9 @@ public class Login {
 	public void login(Frame frame) {
 		Player player;
 		try {
-			// Must keep it to not change player info if he already exist.
+			// Creates a new account and creates a default player.
 			if (FilesManager.readFromFile(new File("data/characters/" + frame.getUsername() + ".ser")) == null) {
-				player = new Soldier();
+				player = new Player();
 				player.setUsername(frame.getUsername());
 				player.setPassword(frame.getPassword());
 				FilesManager.writeToFile(player, new File("data/characters/" + frame.getUsername() + ".ser"));
