@@ -94,7 +94,7 @@ public class Player extends Entity {
 	 * @return username meets conditions.
 	 */
 	public boolean hasProperUsername(String username) {
-		return (Pattern.matches("[a-zA-Z0-9]+", username));
+		return (Pattern.matches("[a-zA-Z0-9]+", username) && !username.isEmpty());
 	}
 
 	/**

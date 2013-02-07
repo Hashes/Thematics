@@ -1,14 +1,5 @@
 package org.thematics;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.swing.JOptionPane;
-
-import org.thematics.frame.LoginFrame;
-import org.thematics.frame.MenuFrame;
-import org.thematics.io.FilesManager;
-import org.thematics.player.Player;
 
 /**
  * Class to handle when a player logs in.
@@ -25,8 +16,10 @@ public class Login {
 	 * The login : handles both new players and existing players.
 	 * @param frame
 	 */
-	public void login(LoginFrame frame) {
-		Player player;
+	public void login(/*LoginFrame frame*/) {
+		String username;
+		String password;
+		/*Player player;
 		try {
 			// Creates a new account and creates a default player.
 			if (FilesManager.readFromFile(new File("data/characters/" + frame.getUsername() + ".ser")) == null) {
@@ -38,7 +31,7 @@ public class Login {
 			// Assigns the player object by reading the proper text file.
 			player = (Player) FilesManager.readFromFile(new File("data/characters/" + frame.getUsername() + ".ser"));
 			
-			if (!frame.getPassword().equals(player.getPassword())) {
+			if (!frame.getEncryptedPassword().equals(player.getPassword())) {
 	        	 JOptionPane.showMessageDialog(frame,
 	                     "Invalid password. Try again.",
 	                     "Wrong password.",
@@ -51,7 +44,7 @@ public class Login {
 			player.start();
 		} catch (ClassNotFoundException | IOException  e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 	
 	/**
@@ -60,7 +53,7 @@ public class Login {
 	 * @param player
 	 * @param frame
 	 */
-	private void initNewPlayer(Player player, LoginFrame frame) {
+	/*private void initNewPlayer(Player player, LoginFrame frame) {
 		if (!player.hasProperUsername(frame.getUsername())) {
 			JOptionPane.showMessageDialog(frame, 
 					"Your username may only contain letters and numbers.",
@@ -69,10 +62,19 @@ public class Login {
 			return;
 		}
 		
+		if (frame.getPassword().isEmpty() || frame.getPassword().length() < 6) {
+			JOptionPane.showMessageDialog(frame, 
+					"Your password must be at least 6 characters long.",
+					"Too short password.",
+					JOptionPane.ERROR_MESSAGE);
+			return;
+		}
+			
+		
 		frame.dispose();
 		
 		MenuFrame menuFrame = new MenuFrame();
 		menuFrame.setInstances(player, frame);
 		menuFrame.setVisible(true);
-	}
+	}*/
 }

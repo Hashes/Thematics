@@ -1,8 +1,8 @@
 package org.thematics;
 
-import java.awt.EventQueue;
+import org.thematics.utility.Log;
+import org.thematics.utility.Log.Level;
 
-import org.thematics.frame.LoginFrame;
 
 /**
  * Entry point of the program.
@@ -16,10 +16,8 @@ public class Main {
 	 * 
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginFrame().setVisible(true);
-            }
-        });
+		Log.log("Starting Thematics...", Level.INFO);
+		Server.start();
+		Log.log("Thematics launched.", Level.INFO);
 	}
 }
