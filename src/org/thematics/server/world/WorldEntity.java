@@ -1,6 +1,7 @@
 package org.thematics.server.world;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.thematics.server.entity.Entity;
@@ -12,7 +13,7 @@ import org.thematics.server.entity.Entity;
  * @param <E>
  * 		to create generics only with an entity.
  */
-public class WorldEntity<E extends Entity> {
+public class WorldEntity<E extends Entity> implements Iterable<E> {
 
 	/**
 	 * The index we're at when reading the array.
@@ -147,5 +148,14 @@ public class WorldEntity<E extends Entity> {
 	 */
 	public int getNumberOfEntities() {
 		return noNullEntities.size();
+	}
+
+	/**
+	 * So we can iterate through the entities list.
+	 */
+	@Override
+	public Iterator<E> iterator() {
+		 Iterator<E> iterator = (Iterator<E>) noNullEntities.iterator();
+	     return iterator; 
 	}
 }
