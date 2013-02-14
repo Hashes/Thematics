@@ -20,7 +20,7 @@ public class WorldEntity<E extends Entity> implements Iterable<E> {
 	 */
 	private int index = 0;
 	/**
-	 * The maximum capacity of the array and linkedlist.
+	 * The maximum capacity of the array and list.
 	 */
 	private int capacity;
 	
@@ -29,13 +29,13 @@ public class WorldEntity<E extends Entity> implements Iterable<E> {
 	 */
 	private Entity[] entities;
 	/**
-	 * A linkedlist containing the entities in the world
+	 * A list containing the entities in the world
 	 * so we don't get null when removing an entity.
 	 */
 	private List<Entity> noNullEntities;
 	
 	/**
-	 * Creates a new instance and initialises the array/linkedlist
+	 * Creates a new instance and initialises the array/list
 	 * along with their capacity.
 	 * @param capacity
 	 */
@@ -77,6 +77,11 @@ public class WorldEntity<E extends Entity> implements Iterable<E> {
 		}
 	}
 	
+	/**
+	 * Returns an entity in the arraylist.
+	 * @param entity
+	 * @return the entity
+	 */
 	@SuppressWarnings("unchecked")
 	public E get(E entity) {
 		return (E) noNullEntities.get(getIndex(entity));
@@ -89,14 +94,15 @@ public class WorldEntity<E extends Entity> implements Iterable<E> {
 	 */
 	private int getIndex(E entity) {
 		for (int i = 0; i < entities.length; i++)
-			if (noNullEntities.get(i).equals(entity))
+			if (entities[i].equals(entity))
 				return i;
 		
 		return 0;
 	}
 	
 	/**
-	 * Increases the index.
+	 * Increases the index and make sure it
+	 * doesn't go over the maximum capacity.
 	 */
 	private void increaseIndex() {
 		if (index > capacity) {
@@ -108,7 +114,8 @@ public class WorldEntity<E extends Entity> implements Iterable<E> {
 	}
 	
 	/**
-	 * Decreases the index.
+	 * Decreases the index and makes sure it
+	 * doesn't go below 0.
 	 */
 	private void decreaseIndex() {
 		if (index < 0) {
@@ -151,8 +158,10 @@ public class WorldEntity<E extends Entity> implements Iterable<E> {
 	}
 
 	/**
-	 * So we can iterate through the entities list.
+	 * An iterator so we can loop through the
+	 * entities list with the for loop.
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public Iterator<E> iterator() {
 		 Iterator<E> iterator = (Iterator<E>) noNullEntities.iterator();

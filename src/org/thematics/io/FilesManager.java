@@ -9,6 +9,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import org.thematics.server.player.Player;
+
 /**
  * Handles general files input/output.
  * @author Guillaume
@@ -17,6 +19,10 @@ import java.io.Serializable;
 public class FilesManager implements Serializable {
 
 	private static final long serialVersionUID = 2949997069915938262L;
+	
+	public static void savePlayer(Player player) {
+		writeToFile(player, new File("data/characters/" + player.getUsername() + ".ser"));
+	}
 	
 	/**
 	 * Writes an object to the file.

@@ -34,8 +34,10 @@ public abstract class Entity implements Serializable {
 		setHitpoints(hitpoints);
 	}
 
+	/**
+	 * Used to initiate a new instance of subclasses.
+	 */
 	protected Entity() {
-		
 	}
 	
 	/**

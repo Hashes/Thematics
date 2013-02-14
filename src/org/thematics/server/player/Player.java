@@ -1,7 +1,10 @@
 package org.thematics.server.player;
 
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
+import org.thematics.server.Executing;
+import org.thematics.server.Server;
 import org.thematics.server.entity.Entity;
 import org.thematics.server.entity.Combat.CombatTypes;
 import org.thematics.server.world.World;
@@ -39,10 +42,18 @@ public class Player extends Entity {
 		setRunEnergy(100);
 	}
 	
+	/**
+	 * Creates a new player with username and password null.
+	 * @param combatTypes
+	 * @param hitpoints
+	 */
 	public Player(CombatTypes combatTypes, int hitpoints) {
 		this(combatTypes, hitpoints, null, null);
 	}
 	
+	/**
+	 * Creates a new empty player.
+	 */
 	public Player() {
 		super();
 	}
@@ -55,10 +66,6 @@ public class Player extends Entity {
 		World.getWorld().getPlayers().addEntity(this);
 		System.out.println("There are currently " + World.getWorld().getPlayers().getNumberOfEntities()
 				+ (World.getWorld().getPlayers().getNumberOfEntities() > 1 ? " players" : " player") + " in the world!");
-		System.out.println(World.getWorld().getPlayers().get(this).getCharacterName());
-		System.out.println(World.getWorld().getPlayers().get(this).getPassword());
-		System.out.println(World.getWorld().getPlayers().get(this).getUsername());
-		System.out.println(World.getWorld().getPlayers().get(this).getCombatTypes().toString());
 	}
 
 	/**

@@ -5,6 +5,11 @@ import org.thematics.server.entity.Entity;
 
 public class NpcCombat extends Combat {
 
+	/**
+	 * The npc attacking.
+	 * @param attacker
+	 * @param victim
+	 */
 	public static void attack(Entity attacker, Entity victim) {
 		
 		System.out.println(attacker.getCombatTypes());
