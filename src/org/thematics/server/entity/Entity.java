@@ -49,6 +49,14 @@ public abstract class Entity implements Serializable {
 	}
 	
 	/**
+	 * Processes and updates the entity every
+	 * worldTick delay (600 milliseconds).
+	 */
+	protected void process() {
+		
+	}
+	
+	/**
 	 * The combat type used by the player.
 	 * @return combatTypes
 	 */

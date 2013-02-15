@@ -21,7 +21,7 @@ public class FilesManager implements Serializable {
 	private static final long serialVersionUID = 2949997069915938262L;
 	
 	public static void savePlayer(Player player) {
-		writeToFile(player, new File("data/characters/" + player.getUsername() + ".ser"));
+		writeToFile(player, new File("data/characters/" + player.getUsername() + ".bin"));
 	}
 	
 	/**

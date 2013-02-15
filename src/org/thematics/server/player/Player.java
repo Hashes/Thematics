@@ -1,13 +1,12 @@
 package org.thematics.server.player;
 
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-import org.thematics.server.Executing;
-import org.thematics.server.Server;
-import org.thematics.server.entity.Entity;
 import org.thematics.server.entity.Combat.CombatTypes;
+import org.thematics.server.entity.Entity;
+import org.thematics.server.player.skills.SkillsHandler;
 import org.thematics.server.world.World;
+import org.thematics.server.world.World.WorldSingleton;
 
 /**
  * Defines specific traits for a player.
@@ -21,7 +20,7 @@ public class Player extends Entity {
 	/**
 	 * Class instances
 	 */
-	
+	private transient SkillsHandler skillsHandler;
 	
 	/**
 	 * Variables
@@ -32,7 +31,7 @@ public class Player extends Entity {
 	private int runEnergy;
 	
 	/**
-	 * Creates a new player.
+	 * Creates a new player and saving variables.
 	 * @param combat
 	 */
 	public Player(CombatTypes combatTypes, int hitpoints, String username, String password) {
@@ -59,13 +58,26 @@ public class Player extends Entity {
 	}
 	
 	/**
+	 * Sets the instances used by the player that won't be saved.
+	 */
+	public void setPlayer() {
+		this.skillsHandler = new SkillsHandler();
+	}
+	
+	/**
 	 * Starts the game once the player is logged in.
 	 * 
 	 */
 	public void start() {
-		World.getWorld().getPlayers().addEntity(this);
-		System.out.println("There are currently " + World.getWorld().getPlayers().getNumberOfEntities()
-				+ (World.getWorld().getPlayers().getNumberOfEntities() > 1 ? " players" : " player") + " in the world!");
+		WorldSingleton.INSTANCE.getPlayers().addEntity(this);
+		System.out.println("There are currently " + WorldSingleton.INSTANCE.getPlayers().getNumberOfEntities()
+				+ (WorldSingleton.INSTANCE.getPlayers().getNumberOfEntities() > 1 ? " players" : " player") 
+				+ " in the world!");
+	}
+	
+	@Override
+	public void process() {
+		skillsHandler.process(this);
 	}
 
 	/**

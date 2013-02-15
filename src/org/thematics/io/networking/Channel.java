@@ -25,10 +25,7 @@ public class Channel extends SimpleChannelHandler {
 	}
 	
 	public void init() {
-		ChannelFactory factory =
-	            new NioServerSocketChannelFactory(
-	                    Executors.newCachedThreadPool(),
-	                    Executors.newCachedThreadPool());
+		ChannelFactory factory = new NioServerSocketChannelFactory();
 		
 	        bootstrap = new ServerBootstrap(factory);
 	        
@@ -77,5 +74,6 @@ public class Channel extends SimpleChannelHandler {
 	
 	public static final void shutdown() {
 		bootstrap.shutdown();
+		bootstrap.releaseExternalResources();
 	}
 }

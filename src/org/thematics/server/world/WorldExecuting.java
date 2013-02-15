@@ -3,6 +3,8 @@ package org.thematics.server.world;
 import java.util.concurrent.TimeUnit;
 
 import org.thematics.server.Executing;
+import org.thematics.server.player.Player;
+import org.thematics.server.world.World.WorldSingleton;
 
 public class WorldExecuting {
 	
@@ -27,7 +29,9 @@ public class WorldExecuting {
 	 * The tasks processed by the world tick.
 	 */
 	private static void processWorldTick() {
-		
+		for (Player players : WorldSingleton.INSTANCE.getPlayers())
+			players.process();
+		System.out.println("600 ms.");
 	}
 	
 }
