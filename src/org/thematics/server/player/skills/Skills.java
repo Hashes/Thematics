@@ -9,7 +9,7 @@ import org.thematics.server.player.Player;
  *
  */
 public interface Skills {
-
+	
 	/**
 	 * The skills process, called every game tick (600 milliseconds).
 	 * @param player

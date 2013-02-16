@@ -18,10 +18,10 @@ public class Server {
 		Log.log("Creating the world...", Level.INFO);
 		World.getWorld().initWorld();
 		Log.log("Finished creating the world.", Level.INFO);
-		Executing.initExecutors();
 		Log.log("Initiating network handler...", Level.INFO);
 		Channel channel = new Channel();
 		channel.init();
+		Executing.initExecutors();
 	}
 	
 	public static void stopServer() {

@@ -24,12 +24,12 @@ public final class World {
 	/**
 	 * The players in the world with maximum of Settings.MAXIMUM_PLAYERS.
 	 */
-	private WorldEntity<Player> players = new WorldEntity<Player>(Settings.MAXIMUM_PLAYERS);
+	private final WorldEntity<Player> players = new WorldEntity<Player>(Settings.MAXIMUM_PLAYERS);
 		
 	/**
 	 * The npcs in the world with maximum of Settings.MAXIMUM_NPCS.
 	 */
-	private WorldEntity<Npc> npcs = new WorldEntity<Npc>(Settings.MAXIMUM_NPCS);
+	private final WorldEntity<Npc> npcs = new WorldEntity<Npc>(Settings.MAXIMUM_NPCS);
 	
 	/**
 	 * The players of the array.

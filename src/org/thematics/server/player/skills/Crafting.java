@@ -11,7 +11,6 @@ public class Crafting implements Skills {
 
 	@Override
 	public boolean canProcess(Player player) {
-		return false;
+		return true;
 	}
-
 }

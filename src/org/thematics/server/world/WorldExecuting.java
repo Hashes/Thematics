@@ -28,9 +28,9 @@ public class WorldExecuting {
 	 * The tasks processed by the world tick.
 	 */
 	private static void processWorldTick() {
-		for (Player players : World.getWorld().getPlayers()) 
+		for (Player players : World.getWorld().getPlayers())
 			players.process();
-
-		System.out.println("This tick is processed every 600 milliseconds.");
+		
+		System.out.println("This tick is processed every " + DELAY + " milliseconds.");
 	}
 }

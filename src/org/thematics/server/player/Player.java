@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 
 import org.thematics.server.entity.Combat.CombatTypes;
 import org.thematics.server.entity.Entity;
+import org.thematics.server.player.skills.Crafting;
 import org.thematics.server.player.skills.SkillsHandler;
 import org.thematics.server.world.World;
 
@@ -37,6 +38,7 @@ public class Player extends Entity {
 		super(combatTypes, hitpoints);
 		this.username = username;
 		this.password = password;
+		setPlayer();
 		setRunEnergy(100);
 	}
 	
@@ -72,11 +74,15 @@ public class Player extends Entity {
 		System.out.println("There are currently " + World.getWorld().getPlayers().getNumberOfEntities()
 				+ (World.getWorld().getPlayers().getNumberOfEntities() > 1 ? " players" : " player") 
 				+ " in the world!");
+		skillsHandler.setSkills(new Crafting());
 	}
 	
+	/**
+	 * Processes everything related to a player every 600 milliseconds.
+	 */
 	@Override
 	public void process() {
-		skillsHandler.process(this);
+		skillsHandler.processSkill(this);
 	}
 
 	/**
@@ -150,5 +156,9 @@ public class Player extends Entity {
 	 */
 	public void setCharacterName(String characterName) {
 		this.characterName = characterName;
+	}
+	
+	public SkillsHandler getSkillsHandler() {
+		return skillsHandler;
 	}
 }
