@@ -4,7 +4,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.thematics.server.Executing;
 import org.thematics.server.player.Player;
-import org.thematics.server.world.World.WorldSingleton;
 
 public class WorldExecuting {
 	
@@ -29,9 +28,9 @@ public class WorldExecuting {
 	 * The tasks processed by the world tick.
 	 */
 	private static void processWorldTick() {
-		for (Player players : WorldSingleton.INSTANCE.getPlayers())
+		for (Player players : World.getWorld().getPlayers()) 
 			players.process();
-		System.out.println("600 ms.");
+
+		System.out.println("This tick is processed every 600 milliseconds.");
 	}
-	
 }

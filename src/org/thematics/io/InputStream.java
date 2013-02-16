@@ -1,13 +1,20 @@
 package org.thematics.io;
 
+import org.jboss.netty.buffer.ChannelBuffer;
+
 public class InputStream {
 
-	private byte[] buffer;
+	/**
+	 * The input streams buffer.
+	 */
+	ChannelBuffer buffer;
 	
+	/**
+	 * The capacity of the buffer.
+	 */
 	private int capacity;
 	
 	public InputStream(int capacity) {
-		buffer = new byte[capacity];
 		this.capacity = capacity;
 	}
 }

@@ -6,7 +6,6 @@ import org.thematics.server.entity.Combat.CombatTypes;
 import org.thematics.server.entity.Entity;
 import org.thematics.server.player.skills.SkillsHandler;
 import org.thematics.server.world.World;
-import org.thematics.server.world.World.WorldSingleton;
 
 /**
  * Defines specific traits for a player.
@@ -69,9 +68,9 @@ public class Player extends Entity {
 	 * 
 	 */
 	public void start() {
-		WorldSingleton.INSTANCE.getPlayers().addEntity(this);
-		System.out.println("There are currently " + WorldSingleton.INSTANCE.getPlayers().getNumberOfEntities()
-				+ (WorldSingleton.INSTANCE.getPlayers().getNumberOfEntities() > 1 ? " players" : " player") 
+		World.getWorld().getPlayers().addEntity(this);
+		System.out.println("There are currently " + World.getWorld().getPlayers().getNumberOfEntities()
+				+ (World.getWorld().getPlayers().getNumberOfEntities() > 1 ? " players" : " player") 
 				+ " in the world!");
 	}
 	

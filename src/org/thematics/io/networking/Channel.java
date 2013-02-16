@@ -1,7 +1,6 @@
 package org.thematics.io.networking;
 
 import java.net.InetSocketAddress;
-import java.util.concurrent.Executors;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelException;
@@ -64,7 +63,7 @@ public class Channel extends SimpleChannelHandler {
 	
 	@Override
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) {
-		
+		System.out.println((String)e.getMessage());
 	}
 	
 	@Override
