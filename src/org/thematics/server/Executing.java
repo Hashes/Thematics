@@ -5,6 +5,11 @@ import java.util.concurrent.ScheduledExecutorService;
 
 import org.thematics.server.world.WorldExecuting;
 
+/**
+ * The concurrency threads used for server tasks.
+ * @author Guillaume
+ *
+ */
 public final class Executing {
 	
 	/**

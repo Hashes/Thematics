@@ -2,6 +2,7 @@ package org.thematics.server.player;
 
 import java.util.regex.Pattern;
 
+import org.thematics.server.Server;
 import org.thematics.server.entity.Combat.CombatTypes;
 import org.thematics.server.entity.Entity;
 import org.thematics.server.player.skills.Crafting;
@@ -158,6 +159,10 @@ public class Player extends Entity {
 		this.characterName = characterName;
 	}
 	
+	/**
+	 * Returns the skills handler instance.
+	 * @return skillsHandler
+	 */
 	public SkillsHandler getSkillsHandler() {
 		return skillsHandler;
 	}

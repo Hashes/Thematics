@@ -22,6 +22,10 @@ public final class Npc extends Entity {
 	 */
 	public Npc() {
 		this(CombatTypes.MELEE, 10);
-	}
+	}	
 	
+	@Override
+	public void process() {
+		System.out.println("Npcs process.");
+	}
 }

@@ -84,7 +84,7 @@ public class WorldEntity<E extends Entity> implements Iterable<E> {
 	 */
 	@SuppressWarnings("unchecked")
 	public E get(E entity) {
-		return (E) noNullEntities.get(getIndex(entity));
+		return (E) noNullEntities.get(noNullEntities.indexOf(entity));
 	}
 	
 	/**
